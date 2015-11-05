@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.0/css/animsition.min.css">
+	<style type="text/css">
+
+body { height: 100%	}
+div.circle
+{
+            position: absolute;
+            top: 50%;
+            width:400px;
+            height:400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            background:#676470;
+            transition:all 5s ease;
+            border-radius: 50%;
+}
+
+.left { left: 25%;  }
+.right { left: 75%;  }
+.grow
+{
+        -webkit-transform: scale(20);
+        -ms-transform: scale(20);
+        transform: scale(20);
+}
+
+</style>
+</head>
+<body>
+
+
+
+<div class="circle left">
+	<div class="animsition">
+    	<a href="page2.html" class="animsition-link">animsition link 1</a>
+ 	</div>
+ </div>
+ <div class="circle right">
+	<div class="animsition">
+    	<a href="page2.html" class="animsition-link">animsition link 1</a>
+ 	</div>
+ </div>
+	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.0/js/animsition.min.js"></script>
+	<script>
+$(document).ready(function() {
+  $(".animsition").animsition({
+    inClass: 'fade-in-left-sm',
+    outClass: 'fade-out-left-sm',
+    inDuration: 1500,
+    outDuration: 800,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+    loading: true,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });
+});
+
+	$('.circle').on('click', function(e) {
+		e.preventDefault();
+		$(this).addClass('grow');
+	}
+);
+
+	</script>
+</body>
+</html>

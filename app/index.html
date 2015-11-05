@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>yogrunt</title>
+    <title>Lernsalon</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -17,52 +17,69 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.0/css/animsition.min.css">
   </head>
   <body class="red">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
+    <div id="animyellow" class="yellow"></div>
+    <div id="animblue" class="blue"></div>
+    <div id="animgreen" class="green"></div>
+
+
+
     <div class="container">
       <div class="header">
-        <h3 class="text-muted">LernSalon</h3>
+        <h3 class="text-muted"><a href="/">LernSalon</a></h3>
         <h3 class="pull-right">PRAXIS FÜR LERNTHERAPIE</h3>
-        <ul class="nav nav-pills">
-          <li class="active"><a href="#">Nav</a></li>
-          <li><a href="#">Nav</a></li>
-          <li><a href="#">Nav</a></li>
+        <ul class="nav">
+          <li class="active"><a href="/">Home</a></li>
         </ul>
       </div>
 
       <div class="row">
+        
         <div class="col-md-4">
-          <div class="circle yellow">
-            <div>
-              <h2>LESE- RECHTSCHREIB-STÖRUNG (LRS)</h2>
-              <p>Es ist nicht eindeutig geklärt, wo die Ursachen einer Lese- Rechtschreibschwäche zu suchen sind. Insgesamt lässt sich
-die LRS nicht auf einen einzigen Grund zurückführen. Neurologische... MEHR</p>
+          <div class="ch-item circle yellow" data-color="yellow">
+            <div class="ch-info-wrap">
+              <div class="ch-info">
+                <div class="ch-info-front ch-img-2"><h2>LESE- RECHTSCHREIB-STÖRUNG (LRS)</h2></div>
+                <div class="ch-info-back">
+                  <p>Es ist nicht eindeutig geklärt, wo die Ursachen einer Lese- Rechtschreibschwäche zu suchen sind. Insgesamt lässt sich
+die LRS nicht auf einen einzigen Grund zurückführen. Neurologische... 
+    <span class="animsition">
+    <a href="lrs.html" class="animsition-link">MEHR</a>
+  </span>
+ </p></div>
+              </div>
             </div>
           </div>
-          
+        </div>
+
+        <div class="col-md-4">
+          <div class="ch-item circle blue" data-color="blue">
+            <div class="ch-info-wrap">
+              <div class="ch-info">
+                <div class="ch-info-front ch-img-2"><h2>RECHENSTÖRUNG (DYSKALKULIE)</h2></div>
+                <div class="ch-info-back">
+                  <p>Von einer Rechenschwäche betroffenen Kindern und Jugendlichen fehlt das grundlegende Verständnis für Mengen und Relationen und/oder Zahlen und ihren Beziehungen zueinander. Diese Vorstellungen sind für... <span class="animsition">
+    <a href="rechenstoerung.html" class="animsition-link">MEHR</a></span></p></div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-md-4">
-         <div class="circle blue">
-            <div>
-              <h2>RECHENSTÖRUNG (DYSKALKULIE)</h2>
-              <p>Von einer Rechenschwäche betroffenen Kindern und Jugendlichen fehlt das grundlegende Verständnis für Mengen und Relationen und/oder Zahlen und ihren Beziehungen zueinander. Diese Vorstellungen sind für... MEHR</p>
+           <div class="ch-item circle green" data-color="green">
+            <div class="ch-info-wrap">
+              <div class="ch-info">
+                <div class="ch-info-front ch-img-2"><h2>AD(H)S</h2></div>
+                <div class="ch-info-back">
+                  <p>ADHS, so wird eine, schon im Kindesalter beginnende psychische Störung genannt. Mttlerweile stellen hyperkinetische Störungen wie ADHS zusammen mit Störungen des Sozialverhaltens die häufigsten...  <span class="animsition">
+    <a href="adhs.html" class="animsition-link">MEHR</a></span></p></div>
+              </div>
             </div>
           </div>
-          
-        </div>
-        <div class="col-md-4">
-           <div class="circle green">
-            <div>
-              <h2>AD(H)S</h2>
-              <p>ADHS, so wird eine, schon im Kindesalter beginnende psychische Störung genannt. Mttlerweile stellen hyperkinetische Störungen wie ADHS zusammen mit Störungen des Sozialverhaltens die häufigsten... MEHR</p>
-            </div>
-          </div>
-          
         </div>
       </div>
       <div class="row">
@@ -134,6 +151,8 @@ die LRS nicht auf einen einzigen Grund zurückführen. Neurologische... MEHR</p>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.0/js/animsition.min.js"></script>
     
     <!-- build:js scripts/plugins.js -->
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
@@ -153,5 +172,46 @@ die LRS nicht auf einen einzigen Grund zurückführen. Neurologische... MEHR</p>
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    <script>
+$(document).ready(function() {
+
+$(".animsition").animsition({
+    inClass: 'fade-in-left-sm',
+    outClass: 'fade-out-left-sm',
+    inDuration: 1500,
+    outDuration: 800,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+    loading: true,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });
+
+  $('.circle a').on('click', function(e) {
+    e.preventDefault();
+    var w = $(window).width()+1000;
+    var ele = $(this).parents('.circle')
+    var o = ele.offset();
+    var cw = ele.width()/2;
+    var col = ele.data('color');
+    //$('#anim').addClass(col);
+    var anim = $('#anim'+col);
+    anim.css('top',o.top+cw).css('left',o.left+cw).css('margin-left',- w/2).css('margin-top',- w/2).height(w).width(w);
+    //.addClass('grow');
+  });
+  });
+
+  </script>
   </body>
 </html>

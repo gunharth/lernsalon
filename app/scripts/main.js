@@ -1,15 +1,23 @@
 'use strict';
-var cwidth;
+
+function checkColumnHeights() {
+	//greenBox
+	/*var yellowBoxHeight = $('#yellowBox').height();
+	$('#greenBox').height(yellowBoxHeight);*/
+
+	// whiteBox
+	var rightColheight = $('#rightCol').height();
+	var redBoxHeight = $('#redBox').height();
+	var whiteBoxHeight = rightColheight-redBoxHeight;
+	$('#whiteBox').height(whiteBoxHeight-100);
+}
+
 $(document).ready(function() {
-	cwidth = $('div.circle:eq(0)').width();
-	$('div.circle').height(cwidth);
-	cwidth = $('div.circle-small:eq(0)').width();
-	$('div.circle-small').height(cwidth);
+	checkColumnHeights();
 });
 
-$( window ).resize(function() {
-	cwidth = $('div.circle:eq(0)').width();
-	$('div.circle').height(cwidth);
-	cwidth = $('div.circle-small:eq(0)').width();
-	$('div.circle-small').height(cwidth);
+$(window).resize(function() {
+	checkColumnHeights();
 });
+
+

@@ -13,6 +13,13 @@ function checkColumnHeights() {
 }
 
 $(function() {
+	
+	if($('#index').length) {
+		checkIndexColumnHeights();
+	} else {
+		checkColumnHeights();
+	}
+	
 	$('.navbar-toggle').on('click', function() {
 		$('nav').toggleClass('red').toggleClass('yellow');
 	});

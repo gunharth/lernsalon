@@ -1,18 +1,38 @@
 'use strict';
 
-function checkColumnHeights() {
-	var rightColheight = $('#rightCol').height();
-	var redBoxHeight = $('#redBox').height();
-	var whiteBoxHeight = rightColheight - redBoxHeight;
-	$('#whiteBox').height(whiteBoxHeight - 100);
+function checkIndexColumnHeights() {
+	var contentBoxHeight = $('#contentBox').height();
+	$('#redBox').height(contentBoxHeight);
 }
 
-$(document).ready(function() {
-	checkColumnHeights();
+function checkColumnHeights() {
+	var contentBoxHeight = $('#contentBox').height();
+	var redBoxHeight = $('#redBox').height();
+	var whiteBoxHeight = contentBoxHeight - redBoxHeight;
+	$('#whiteBox').height(whiteBoxHeight - 48);
+}
+
+$(function() {
+	$('.navbar-toggle').on('click', function() {
+		$('nav').toggleClass('red').toggleClass('yellow');
+	});
 });
 
+
 $(window).resize(function() {
-	checkColumnHeights();
+	if($('#index').length) {
+		checkIndexColumnHeights();
+	} else {
+		checkColumnHeights();
+	}
+});
+
+$(window).load(function() {
+	if($('#index').length) {
+		checkIndexColumnHeights();
+	} else {
+		checkColumnHeights();
+	}
 });
 
 

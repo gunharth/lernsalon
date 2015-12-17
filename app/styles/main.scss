@@ -5,17 +5,40 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-body { 
-    padding-top: 60px; background: #ff0303;
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic);
+
+body {  
+    font-family: 'Noto Sans', sans-serif;
+    margin: 8px;
+    background: #ff0303;
     background: #ff0303 url(../images/Tapete.jpg);
 }
 
+/* header md lg flexbox */
 .vertical-bottom {
     display: flex;
     align-items: flex-end;
 }
 
-.navbar-default {
+
+/* some initial text styles */
+a { color: #e3001b; }
+ul a { color: #fff; }
+h1 { color: #e3001b; margin: 0;}
+h2 { color: #e3001b; margin: 0; }
+h3 { color: #e3001b; margin: 0; }
+
+/* navbar */
+
+.navbar { 
+        border: 0; 
+        margin: 0 -7px 16px -7px;
+    }
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+/*.navbar-default {
     background-color: #b80f1a;
     border-color: #b80f1a;
 }
@@ -24,16 +47,18 @@ body {
     color: #fff;
 }
 
-@media (min-width: 768px) {
-.navbar-nav > li {
-    float: none;
-}
-.navbar-nav > li > a {
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-}
+.navbar-collapse { padding: 0;}
 
+@media (min-width: 768px) {
+    .navbar-nav > li {
+        float: none;
+    }
+    .navbar-nav > li > a {
+        padding: 0px;
+    }
+}*/
+
+/* general */
 .row{
   margin-bottom: 16px
 }
@@ -42,37 +67,30 @@ body {
     padding-right:8px;
     padding-left:8px;
 }
+.row>div>div {  padding: 16px}
 
-.row>div>div { min-height: 100px; padding: 20px}
+.row .row > div[class*="col-"] {
 
+  padding-right:16px;
+    padding-left:16px;
+  
+}
+
+/* boxes */
 .red { background-color: #b80f1a; }
 .yellow { background-color: #ffe053; }
 .blue { background-color: #389bd5; }
 .green { background-color: #c4ca37; }
 .white { background-color: #fff; }
 
-#yellowBox { padding: 0 35px; height: 195px; }
-#greenBox { padding: 0; height: 195px; }
-
+#yellowBox { padding: 0 16px; height: 195px; }
+#greenBox, #greenBoxSM { padding: 0; height: 195px; }
+#redBox { margin-bottom: 16px; }
 
 .radius-top-left { border-radius: 40px 0 0 0; }
 .radius-top-right { border-radius: 0 40px 0 0; }
 .radius-bottom-left { border-radius: 0 0 0 40px; }
 .radius-bottom-right { border-radius: 0 0 40px 0; }
-
-
-html,body {
-    height:100%;
-}
-
-
-
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
 
 
 
@@ -102,12 +120,12 @@ html,body {
 
     /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {
-
+        body { padding-top: 50px; }
     }
 
     /* Large Devices, Wide Screens */
     @media only screen and (min-width : 1200px) {
-
+        .container { width: 1090px;}
     }
 
 
@@ -116,13 +134,49 @@ html,body {
 
     /* Large Devices, Wide Screens */
     @media only screen and (max-width : 1200px) {
-        #yellowBox { padding: 0 35px; height: 160px; }
-        #greenBox { padding: 0; height: 160px; }
+        #yellowBox { height: 160px; }
+        #greenBox { height: 160px; }
     }
 
     /* Medium Devices, Desktops */
     @media only screen and (max-width : 992px) {
+        
+        #greenBoxSM { height: 50px; }
 
+        /* override navbar toggle display */
+        .navbar-header {
+            float: none;
+        }
+        .navbar-left,.navbar-right {
+            float: none !important;
+        }
+        .navbar-toggle {
+            display: block;
+        }
+        .navbar-collapse {
+            border-top: 0;
+        }
+        .navbar-fixed-top {
+            top: 0;
+            border-width: 0 0 1px;
+        }
+        .navbar-collapse.collapse {
+            display: none!important;
+        }
+        .navbar-nav {
+            float: none!important;
+            margin-top: 7.5px;
+        }
+        .navbar-nav>li {
+            float: none;
+        }
+        .navbar-nav>li>a {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .collapse.in{
+            display:block !important;
+        }
     }
 
     /* Small Devices, Tablets */

@@ -16,7 +16,7 @@ body {
     background: #ff0303 url(../images/Tapete.jpg);
 }
 
-/* header md lg flexbox */
+/* header md,lg flexbox */
 .vertical-bottom {
     display: flex;
     align-items: flex-end;
@@ -29,6 +29,8 @@ ul a { color: #fff; }
 h1 { color: #e3001b; margin: 0;}
 h2 { color: #e3001b; margin: 0; }
 h3 { color: #e3001b; margin: 0; }
+
+#whiteBox h2, #whiteBoxSM h2 { color: #000; }
 
 /* FF fix */
 .img-responsive {
@@ -43,6 +45,27 @@ h3 { color: #e3001b; margin: 0; }
     }
 .navbar-default .navbar-nav > li > a {
     color: #fff;
+}
+
+.navbar-toggle {
+    border: 0;
+    padding: 8px 10px;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle.collapsed .icon-bar {
+    background-color: #b80f1a;
+}
+
+.navbar-toggle .icon-bar {
+    height: 3px;
 }
 
 /*.navbar-default {
@@ -98,6 +121,34 @@ h3 { color: #e3001b; margin: 0; }
 .radius-top-right { border-radius: 0 40px 0 0; }
 .radius-bottom-left { border-radius: 0 0 0 40px; }
 .radius-bottom-right { border-radius: 0 0 40px 0; }
+
+/* footer */
+.footer, .footer a {
+    color: #fff; 
+}
+.footer .icon { 
+    padding-bottom: 10px;
+    display: inline-block; 
+}
+.footer .icon a { 
+    display: inline-block; 
+    background: #ccc; 
+    height: 40px; 
+    width: 40px; 
+    border-radius: 50%;
+    font-size: 24px;
+    padding-top: 5px;
+    /*display: flex;
+    align-items: center;
+    justify-content: center;*/
+    }
+    /*.glyph-background {
+    position:relative;
+    border-radius:50%;
+    color:#fff;
+    z-index:2;
+}*/
+
 
 
 
